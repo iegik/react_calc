@@ -19,29 +19,38 @@ import {
 class react_calc extends Component {
   state = {
     result: '0',
+    cache: ''
   };
 
-  cache = '';
   clear(){
-    this.cache = 0;
-    this.setState({result: '0'})
+    this.setState({
+      result: '0',
+      cache: '',
+    })
   }
   calc(operation){
+    let cache = this.state.cache + this.state.result;
     if(operation === 'plus') {
-      this.cache += this.state.result + '+';
-      this.setState({result: '0'})
+      this.setState({
+        result: '0',
+        cache: cache + '+',
+      })
     }
     if(operation === 'equal') {
-      this.setState({result: eval(this.cache += this.state.result) + ''});
+      this.setState({
+        result: eval(cache) + '',
+        cache
+      });
     }
   }
   press(key){
-    this.setState({result: this.state.result + key})
+    this.setState({result: (this.state.result === '0' ? '' : this.state.result) + key})
   }
 
   render() {
     return (
       <View style={styles.container}>
+        <Text style={styles.cache}>{this.state.cache}</Text>
         <TextInput style={styles.dsp}
                    value={this.state.result}
                    editable={true}
