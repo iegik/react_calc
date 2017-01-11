@@ -13,7 +13,7 @@ import {
   TouchableHighlight,
   TouchableWithoutFeedback,
   Text,
-  View
+  View,
 } from 'react-native';
 
 class react_calc extends Component {
@@ -30,18 +30,25 @@ class react_calc extends Component {
   }
   calc(operation){
     let cache = this.state.cache + this.state.result;
+    let state;
     if(operation === 'plus') {
-      this.setState({
+      state = {
         result: '0',
         cache: cache + '+',
-      })
+      }
     }
     if(operation === 'equal') {
-      this.setState({
-        result: eval(cache) + '',
-        cache
-      });
+      try {
+        cache = eval(cache.replace(',', '.'));
+      } catch (e){
+        cache = 'ERROR'
+      }
+      state = {
+        result: cache + '',
+        cache: cache
+      }
     }
+    this.setState(state);
   }
   press(key){
     this.setState({result: (this.state.result === '0' ? '' : this.state.result) + key})
@@ -50,13 +57,17 @@ class react_calc extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.cache}>{this.state.cache}</Text>
-        <TextInput style={styles.dsp}
-                   value={this.state.result}
-                   editable={true}
-                   onChangeText={(result) => this.setState({result})}
-                   keyboardType='numeric'
-        />
+        <View style={[styles.row, styles.dsp]}>
+          <Text style={styles.cache}>{this.state.cache}</Text>
+          {/*<TextInput style={styles.dsp}*/}
+          {/*value={this.state.result}*/}
+          {/*editable={true}*/}
+          {/*onChangeText={(result) => this.setState({result})}*/}
+          {/*/>*/}
+        </View>
+        <View style={[styles.row, styles.dsp]}>
+          <Text style={styles.result}>{this.state.result}</Text>
+        </View>
         <View style={styles.row}>
           <TouchableHighlight style={[styles.btn,styles.btnCtrl]} onPress={()=>this.clear()} ><Text style={styles.btnText}>{ 'C' }</Text></TouchableHighlight>
           <TouchableHighlight style={[styles.btn,styles.btnCtrl]} onPress={()=>this.calc('minus')} ><Text style={styles.btnText}>{ '±' }</Text></TouchableHighlight>
@@ -83,7 +94,7 @@ class react_calc extends Component {
         </View>
         <View style={styles.row}>
           <TouchableHighlight style={[styles.btn,styles.btnZero]} onPress={()=>this.press(0)} ><Text style={styles.btnText}>{ '0' }</Text></TouchableHighlight>
-          <TouchableHighlight style={styles.btn} onPress={()=>this.press(',')} ><Text style={styles.btnText}>{ ',' }</Text></TouchableHighlight>
+          <TouchableHighlight style={[styles.btn,styles.btnComma]} onPress={()=>this.press(',')} ><Text style={styles.btnText}>{ ',' }</Text></TouchableHighlight>
         </View>
       </View>
     );
@@ -98,23 +109,26 @@ const $lightGray = '#333333';
 const $darkGray = '#111111';
 const $yellow = '#eeee11';
 
-const $XXL = 38;
-const $XL = 32;
-const $L = 24;
-const $M = 18;
+const $vh = 100 / height;
+const $rem = 120 * $vh;
+const $XXL = 1.75 * $rem;
+const $XL = 1.5 * $rem;
+const $L = 1.25 * $rem;
+const $M = 1 * $rem;
 const $serif = 'Verdana, sans-serif';
 
 const styles = StyleSheet.create({
   container: {
     backgroundColor: $black,
     flex: 1,
-    alignItems: 'flex-start',
   },
   row: {
     flex: 1,
+    width: width,
     flexDirection: 'row',
   },
   btn: {
+    flex:-1,
     width: width / 4,
     height: height / 7.2,
     justifyContent: 'center',
@@ -124,8 +138,10 @@ const styles = StyleSheet.create({
     borderWidth: 1
   },
   btnText: {
+    flex:1,
     color: $white,
-    fontSize: $L,
+    fontSize: $M,
+    textAlignVertical: 'center',
   },
   btnCtrl: {
     backgroundColor: $darkGray,
@@ -140,17 +156,29 @@ const styles = StyleSheet.create({
   btnZero: {
     width: (width / 4) * 2,
   },
+  btnComma: {
+    zIndex: -1,
+    marginRight: (width / 4),
+  },
   dsp: {
-    width: width,
-    height: (height / 7.2) * 2,
+    flex:1,
+    height: (height / 7.2),
+  },
+  result: {
+    flex:1,
     color: $white,
     textAlign: 'right',
     paddingRight: 10,
     fontSize: $XXL,
-    textAlignVertical: 'bottom',
-    // justifyContent: 'flex-end',
-    // paddingTop: 30,
-    // paddingRight: .5,
+    textAlignVertical: 'center',
+  },
+  cache: {
+    flex:1,
+    color: $lightGray,
+    textAlign: 'right',
+    paddingRight: 10,
+    fontSize: $XL,
+    textAlignVertical: 'center',
   },
 });
 
