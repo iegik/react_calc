@@ -11,20 +11,31 @@ dep:
 	@npm install && npm link
 
 clean:
-	@cd android && ./gradlew.bat clean && cd ..
+	@cd android && ./gradlew clean && cd ..
 
 android: ## Build Android application
-	@node_modules/.bin/react-native run-android
+	@npm run android
+
+android_release_test:
+	@react-native run-android --variant=release
 
 ios: ## Build Android application
-	@node_modules/.bin/react-native run-ios
+	@npm run ios
 
-test: ## Testing
-	@node ./node_modules/jest/bin/jest.js # --inspect --debug-brk
+npm_test:
+	@npm test # --inspect --debug-brk
+
+gradle_test:
+	@cd android && ./gradlew lint && cd ..
+
+test: npm_test gradle_test ## Run all tests (unit/lint)
 
 compile:
 	@npm run start
 
-build: dep compile
+release:
+	@cd android && ./gradlew assembleRelease && cd ..
+
+build: dep npm_test compile gradle_test
 
 .PHONY: android
