@@ -38,4 +38,4 @@ release:
 
 build: dep npm_test compile gradle_test
 
-.PHONY: android
+.PHONY: android ios

@@ -19,7 +19,8 @@ import {
 class react_calc extends Component {
   state = {
     result: '0',
-    cache: ''
+    cache: '',
+    lastOperator: ''
   };
 
   clear(){
@@ -31,13 +32,24 @@ class react_calc extends Component {
   calc(operation){
     let cache = this.state.cache + this.state.result;
     let state;
-    if(operation === 'plus') {
+    if('+-*/'.indexOf(operation) > -1) {
       state = {
         result: '0',
-        cache: cache + '+',
+        cache: cache + operation,
+        lastOperator: operation
       }
     }
-    if(operation === 'equal') {
+    if(operation === ',') {
+      state = {
+        result: this.state.result * '.',
+      }
+    }
+    if(operation === '±') {
+      state = {
+        result: this.state.result * -1,
+      }
+    }
+    if(operation === '=') {
       try {
         cache = eval(cache.replace(',', '.'));
       } catch (e){
@@ -45,8 +57,9 @@ class react_calc extends Component {
       }
       state = {
         result: cache + '',
-        cache: cache
-      }
+        cache: '',
+        lastOperator: operation
+      };
     }
     this.setState(state);
   }
@@ -70,31 +83,31 @@ class react_calc extends Component {
         </View>
         <View style={styles.row}>
           <TouchableHighlight style={[styles.btn,styles.btnCtrl]} onPress={()=>this.clear()} ><Text style={styles.btnText}>{ 'C' }</Text></TouchableHighlight>
-          <TouchableHighlight style={[styles.btn,styles.btnCtrl]} onPress={()=>this.calc('minus')} ><Text style={styles.btnText}>{ '±' }</Text></TouchableHighlight>
-          <TouchableHighlight style={[styles.btn,styles.btnCtrl]} onPress={()=>this.calc('minus')} ><Text style={styles.btnText}>{ '/' }</Text></TouchableHighlight>
-          <TouchableHighlight style={[styles.btn,styles.btnCtrl]} onPress={()=>this.calc('minus')} ><Text style={styles.btnText}>{ '*' }</Text></TouchableHighlight>
+          <TouchableHighlight style={[styles.btn,styles.btnCtrl]} onPress={()=>this.calc('±')} ><Text style={styles.btnText}>{ '±' }</Text></TouchableHighlight>
+          <TouchableHighlight style={[styles.btn,styles.btnCtrl]} onPress={()=>this.calc('/')} ><Text style={styles.btnText}>{ '/' }</Text></TouchableHighlight>
+          <TouchableHighlight style={[styles.btn,styles.btnCtrl]} onPress={()=>this.calc('*')} ><Text style={styles.btnText}>{ '*' }</Text></TouchableHighlight>
         </View>
         <View style={styles.row}>
           <TouchableHighlight style={styles.btn} onPress={()=>this.press(7)} ><Text style={styles.btnText}>{ '7' }</Text></TouchableHighlight>
           <TouchableHighlight style={styles.btn} onPress={()=>this.press(8)} ><Text style={styles.btnText}>{ '8' }</Text></TouchableHighlight>
           <TouchableHighlight style={styles.btn} onPress={()=>this.press(9)} ><Text style={styles.btnText}>{ '9' }</Text></TouchableHighlight>
-          <TouchableHighlight style={[styles.btn,styles.btnCtrl]} onPress={()=>this.calc('minus')} ><Text style={styles.btnText}>{ '-' }</Text></TouchableHighlight>
+          <TouchableHighlight style={[styles.btn,styles.btnCtrl]} onPress={()=>this.calc('-')} ><Text style={styles.btnText}>{ '-' }</Text></TouchableHighlight>
         </View>
         <View style={styles.row}>
           <TouchableHighlight style={styles.btn} onPress={()=>this.press(4)} ><Text style={styles.btnText}>{ '4' }</Text></TouchableHighlight>
           <TouchableHighlight style={styles.btn} onPress={()=>this.press(5)} ><Text style={styles.btnText}>{ '5' }</Text></TouchableHighlight>
           <TouchableHighlight style={styles.btn} onPress={()=>this.press(6)} ><Text style={styles.btnText}>{ '6' }</Text></TouchableHighlight>
-          <TouchableHighlight style={[styles.btn,styles.btnCtrl]} onPress={()=>this.calc('plus')} ><Text style={styles.btnText}>{ '+' }</Text></TouchableHighlight>
+          <TouchableHighlight style={[styles.btn,styles.btnCtrl]} onPress={()=>this.calc('+')} ><Text style={styles.btnText}>{ '+' }</Text></TouchableHighlight>
         </View>
         <View style={styles.row}>
           <TouchableHighlight style={styles.btn} onPress={()=>this.press(1)} ><Text style={styles.btnText}>{ '1' }</Text></TouchableHighlight>
           <TouchableHighlight style={styles.btn} onPress={()=>this.press(2)} ><Text style={styles.btnText}>{ '2' }</Text></TouchableHighlight>
           <TouchableHighlight style={styles.btn} onPress={()=>this.press(3)} ><Text style={styles.btnText}>{ '3' }</Text></TouchableHighlight>
-          <TouchableHighlight style={[styles.btn,styles.btnPrimary]} onPress={()=>this.calc('equal')} ><Text style={[styles.btnText,styles.btnTextPrimary]}>{ '=' }</Text></TouchableHighlight>
+          <TouchableHighlight style={[styles.btn,styles.btnPrimary]} onPress={()=>this.calc('=')} ><Text style={[styles.btnText,styles.btnTextPrimary]}>{ '=' }</Text></TouchableHighlight>
         </View>
         <View style={styles.row}>
           <TouchableHighlight style={[styles.btn,styles.btnZero]} onPress={()=>this.press(0)} ><Text style={styles.btnText}>{ '0' }</Text></TouchableHighlight>
-          <TouchableHighlight style={[styles.btn,styles.btnComma]} onPress={()=>this.press(',')} ><Text style={styles.btnText}>{ ',' }</Text></TouchableHighlight>
+          <TouchableHighlight style={[styles.btn,styles.btnComma]} onPress={()=>this.press('.')} ><Text style={styles.btnText}>{ '.' }</Text></TouchableHighlight>
         </View>
       </View>
     );
@@ -169,6 +182,7 @@ const styles = StyleSheet.create({
     color: $white,
     textAlign: 'right',
     paddingRight: 10,
+    fontFamily: 'digital-7',
     fontSize: $XXL,
     textAlignVertical: 'center',
   },
@@ -177,7 +191,8 @@ const styles = StyleSheet.create({
     color: $lightGray,
     textAlign: 'right',
     paddingRight: 10,
-    fontSize: $XL,
+    fontFamily: 'digital-7',
+    fontSize: $L,
     textAlignVertical: 'center',
   },
 });
