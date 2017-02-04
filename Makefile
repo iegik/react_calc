@@ -16,6 +16,9 @@ clean:
 android: ## Build Android application
 	@npm run android
 
+android_release:
+	@cd android && ./gradlew assembleRelease && cd ..
+
 android_release_test:
 	@react-native run-android --variant=release
 
@@ -33,8 +36,7 @@ test: npm_test gradle_test ## Run all tests (unit/lint)
 compile:
 	@npm run start
 
-release:
-	@cd android && ./gradlew assembleRelease && cd ..
+release: android_release
 
 build: dep npm_test compile gradle_test
 

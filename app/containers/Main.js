@@ -33,7 +33,7 @@ export default class Main extends Component {
         lastOperator: operation
       }
     }
-    if(operation === ',') {
+    if(operation === ',' && !/\./.test(this.state.result)) {
       state = {
         result: this.state.result * '.',
       }
