@@ -118,7 +118,7 @@ const $darkGray = '#111';
 const $yellow = '#ee1';
 
 const $vh = 100 / height;
-const $rem = 28;
+const $rem = 32;
 const $XXL = 1.75 * $rem;
 const $XL = 1.5 * $rem;
 const $L = 1.25 * $rem;
@@ -133,13 +133,12 @@ const styles = StyleSheet.create({
   },
   row: {
     flex: 1,
-    width: width,
     flexDirection: 'row',
   },
   btn: {
     flex: -1,
+    flexGrow: 1,
     width: width / 4,
-    height: height / 7,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: $gray,
