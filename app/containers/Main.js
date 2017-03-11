@@ -8,6 +8,7 @@ import {
   TouchableWithoutFeedback,
   Text,
   View,
+  Platform,
 } from 'react-native';
 
 export default class Main extends Component {
@@ -123,7 +124,7 @@ const $XXL = 1.75 * $rem;
 const $XL = 1.5 * $rem;
 const $L = 1.25 * $rem;
 const $M = 1 * $rem;
-const $serif = 'Verdana, sans-serif';
+const $serif = 'Helvetica';
 const $monospace = 'digital-7';
 
 const styles = StyleSheet.create({
@@ -143,14 +144,21 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: $gray,
     borderColor: $black,
-    borderWidth: 1
+    borderWidth: 1,
   },
-  btnText: {
+  btnText: Platform.OS === 'ios' ? {
     flex: 1,
     color: $white,
     fontFamily: $serif,
     fontSize: $M,
     textAlignVertical: 'center',
+      lineHeight: width / 4,
+  } : {
+      flex: 1,
+      color: $white,
+      fontFamily: $serif,
+      fontSize: $M,
+      textAlignVertical: 'center',
   },
   btnCtrl: {
     backgroundColor: $darkGray,

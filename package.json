@@ -1,24 +1,27 @@
 {
-	"name": "react_calc",
-	"version": "1.0.3",
-	"private": true,
-	"scripts": {
-		"start": "node node_modules/react-native/local-cli/cli.js start",
-		"test": "jest",
-		"android": "node node_modules/react-native/local-cli/cli.js run-android",
-		"apk": "cd android && ./gradlew assembleRelease && cd .."
-	},
-	"dependencies": {
-		"react": "15.4.2",
-		"react-native": "0.40.0"
-	},
-	"devDependencies": {
-		"babel-jest": "18.0.0",
-		"babel-preset-react-native": "1.9.1",
-		"jest": "18.1.0",
-		"react-test-renderer": "15.4.2"
-	},
-	"jest": {
-		"preset": "react-native"
-	}
+  "name": "react_calc",
+  "version": "1.0.3",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest",
+    "android": "node node_modules/react-native/local-cli/cli.js run-android",
+    "ios": "node node_modules/react-native/local-cli/cli.js run-ios",
+    "apk": "cd android && ./gradlew assembleRelease && cd ..",
+    "postinstall": "rndebugger-open"
+  },
+  "dependencies": {
+    "react": "15.4.2",
+    "react-native": "0.40.0"
+  },
+  "devDependencies": {
+    "babel-jest": "18.0.0",
+    "babel-preset-react-native": "1.9.1",
+    "jest": "18.1.0",
+    "react-native-debugger-open": "^0.3.2",
+    "react-test-renderer": "15.4.2"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
 }
