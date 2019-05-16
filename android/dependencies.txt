@@ -1,0 +1,427 @@
+
+------------------------------------------------------------
+Project :app
+------------------------------------------------------------
+
+_debugAndroidTestApk - ## Internal use, do not manually configure ##
+No dependencies
+
+_debugAndroidTestCompile - ## Internal use, do not manually configure ##
+No dependencies
+
+_debugApk - ## Internal use, do not manually configure ##
++--- com.android.support:appcompat-v7:27.0.0+ -> 27.0.0
+|    +--- com.android.support:support-annotations:27.0.0
+|    +--- com.android.support:support-core-utils:27.0.0
+|    |    +--- com.android.support:support-annotations:27.0.0
+|    |    \--- com.android.support:support-compat:27.0.0
+|    |         +--- com.android.support:support-annotations:27.0.0
+|    |         \--- android.arch.lifecycle:runtime:1.0.0
+|    |              +--- android.arch.lifecycle:common:1.0.0
+|    |              \--- android.arch.core:common:1.0.0
+|    +--- com.android.support:support-fragment:27.0.0
+|    |    +--- com.android.support:support-compat:27.0.0 (*)
+|    |    +--- com.android.support:support-core-ui:27.0.0
+|    |    |    +--- com.android.support:support-annotations:27.0.0
+|    |    |    \--- com.android.support:support-compat:27.0.0 (*)
+|    |    +--- com.android.support:support-core-utils:27.0.0 (*)
+|    |    \--- com.android.support:support-annotations:27.0.0
+|    +--- com.android.support:support-vector-drawable:27.0.0
+|    |    +--- com.android.support:support-annotations:27.0.0
+|    |    \--- com.android.support:support-compat:27.0.0 (*)
+|    \--- com.android.support:animated-vector-drawable:27.0.0
+|         +--- com.android.support:support-vector-drawable:27.0.0 (*)
+|         \--- com.android.support:support-core-ui:27.0.0 (*)
+\--- com.facebook.react:react-native:+ -> 0.40.0
+     +--- javax.inject:javax.inject:1
+     +--- com.android.support:appcompat-v7:23.0.1 -> 27.0.0 (*)
+     +--- com.android.support:recyclerview-v7:23.0.1
+     |    +--- com.android.support:support-v4:23.0.1 -> 23.2.1
+     |    |    \--- com.android.support:support-annotations:23.2.1 -> 27.0.0
+     |    \--- com.android.support:support-annotations:23.0.1 -> 27.0.0
+     +--- com.facebook.fresco:fresco:0.11.0
+     |    +--- com.facebook.fresco:drawee:0.11.0
+     |    |    +--- com.android.support:support-v4:23.2.1 (*)
+     |    |    \--- com.facebook.fresco:fbcore:0.11.0
+     |    +--- com.facebook.fresco:fbcore:0.11.0
+     |    \--- com.facebook.fresco:imagepipeline:0.11.0
+     |         +--- com.android.support:support-v4:23.2.1 (*)
+     |         +--- com.facebook.fresco:fbcore:0.11.0
+     |         +--- com.parse.bolts:bolts-tasks:1.4.0
+     |         +--- com.nineoldandroids:library:2.4.0
+     |         \--- com.facebook.fresco:imagepipeline-base:0.11.0
+     |              +--- com.android.support:support-v4:23.2.1 (*)
+     |              +--- com.facebook.fresco:fbcore:0.11.0
+     |              +--- com.parse.bolts:bolts-tasks:1.4.0
+     |              \--- com.nineoldandroids:library:2.4.0
+     +--- com.facebook.fresco:imagepipeline-okhttp3:0.11.0
+     |    +--- com.facebook.fresco:fbcore:0.11.0
+     |    +--- com.squareup.okhttp3:okhttp:3.0.1 -> 3.4.1
+     |    |    \--- com.squareup.okio:okio:1.9.0
+     |    \--- com.facebook.fresco:imagepipeline:0.11.0 (*)
+     +--- com.facebook.soloader:soloader:0.1.0
+     +--- com.google.code.findbugs:jsr305:3.0.0
+     +--- com.squareup.okhttp3:okhttp:3.4.1 (*)
+     +--- com.squareup.okhttp3:okhttp-urlconnection:3.4.1
+     |    \--- com.squareup.okhttp3:okhttp:3.4.1 (*)
+     +--- com.squareup.okhttp3:okhttp-ws:3.4.1
+     |    \--- com.squareup.okhttp3:okhttp:3.4.1 (*)
+     +--- com.squareup.okio:okio:1.9.0
+     \--- org.webkit:android-jsc:r174650
+
+_debugCompile - ## Internal use, do not manually configure ##
++--- com.android.support:appcompat-v7:27.0.0+ -> 27.0.0
+|    +--- com.android.support:support-annotations:27.0.0
+|    +--- com.android.support:support-core-utils:27.0.0
+|    |    +--- com.android.support:support-annotations:27.0.0
+|    |    \--- com.android.support:support-compat:27.0.0
+|    |         +--- com.android.support:support-annotations:27.0.0
+|    |         \--- android.arch.lifecycle:runtime:1.0.0
+|    |              +--- android.arch.lifecycle:common:1.0.0
+|    |              \--- android.arch.core:common:1.0.0
+|    +--- com.android.support:support-fragment:27.0.0
+|    |    +--- com.android.support:support-compat:27.0.0 (*)
+|    |    +--- com.android.support:support-core-ui:27.0.0
+|    |    |    +--- com.android.support:support-annotations:27.0.0
+|    |    |    \--- com.android.support:support-compat:27.0.0 (*)
+|    |    +--- com.android.support:support-core-utils:27.0.0 (*)
+|    |    \--- com.android.support:support-annotations:27.0.0
+|    +--- com.android.support:support-vector-drawable:27.0.0
+|    |    +--- com.android.support:support-annotations:27.0.0
+|    |    \--- com.android.support:support-compat:27.0.0 (*)
+|    \--- com.android.support:animated-vector-drawable:27.0.0
+|         +--- com.android.support:support-vector-drawable:27.0.0 (*)
+|         \--- com.android.support:support-core-ui:27.0.0 (*)
+\--- com.facebook.react:react-native:+ -> 0.40.0
+     +--- javax.inject:javax.inject:1
+     +--- com.android.support:appcompat-v7:23.0.1 -> 27.0.0 (*)
+     +--- com.android.support:recyclerview-v7:23.0.1
+     |    +--- com.android.support:support-v4:23.0.1 -> 23.2.1
+     |    |    \--- com.android.support:support-annotations:23.2.1 -> 27.0.0
+     |    \--- com.android.support:support-annotations:23.0.1 -> 27.0.0
+     +--- com.facebook.fresco:fresco:0.11.0
+     |    +--- com.facebook.fresco:drawee:0.11.0
+     |    |    +--- com.android.support:support-v4:23.2.1 (*)
+     |    |    \--- com.facebook.fresco:fbcore:0.11.0
+     |    +--- com.facebook.fresco:fbcore:0.11.0
+     |    \--- com.facebook.fresco:imagepipeline:0.11.0
+     |         +--- com.android.support:support-v4:23.2.1 (*)
+     |         +--- com.facebook.fresco:fbcore:0.11.0
+     |         +--- com.parse.bolts:bolts-tasks:1.4.0
+     |         +--- com.nineoldandroids:library:2.4.0
+     |         \--- com.facebook.fresco:imagepipeline-base:0.11.0
+     |              +--- com.android.support:support-v4:23.2.1 (*)
+     |              +--- com.facebook.fresco:fbcore:0.11.0
+     |              +--- com.parse.bolts:bolts-tasks:1.4.0
+     |              \--- com.nineoldandroids:library:2.4.0
+     +--- com.facebook.fresco:imagepipeline-okhttp3:0.11.0
+     |    +--- com.facebook.fresco:fbcore:0.11.0
+     |    +--- com.squareup.okhttp3:okhttp:3.0.1 -> 3.4.1
+     |    |    \--- com.squareup.okio:okio:1.9.0
+     |    \--- com.facebook.fresco:imagepipeline:0.11.0 (*)
+     +--- com.facebook.soloader:soloader:0.1.0
+     +--- com.google.code.findbugs:jsr305:3.0.0
+     +--- com.squareup.okhttp3:okhttp:3.4.1 (*)
+     +--- com.squareup.okhttp3:okhttp-urlconnection:3.4.1
+     |    \--- com.squareup.okhttp3:okhttp:3.4.1 (*)
+     +--- com.squareup.okhttp3:okhttp-ws:3.4.1
+     |    \--- com.squareup.okhttp3:okhttp:3.4.1 (*)
+     +--- com.squareup.okio:okio:1.9.0
+     \--- org.webkit:android-jsc:r174650
+
+_debugUnitTestApk - ## Internal use, do not manually configure ##
+No dependencies
+
+_debugUnitTestCompile - ## Internal use, do not manually configure ##
+No dependencies
+
+_releaseApk - ## Internal use, do not manually configure ##
++--- com.android.support:appcompat-v7:27.0.0+ -> 27.0.0
+|    +--- com.android.support:support-annotations:27.0.0
+|    +--- com.android.support:support-core-utils:27.0.0
+|    |    +--- com.android.support:support-annotations:27.0.0
+|    |    \--- com.android.support:support-compat:27.0.0
+|    |         +--- com.android.support:support-annotations:27.0.0
+|    |         \--- android.arch.lifecycle:runtime:1.0.0
+|    |              +--- android.arch.lifecycle:common:1.0.0
+|    |              \--- android.arch.core:common:1.0.0
+|    +--- com.android.support:support-fragment:27.0.0
+|    |    +--- com.android.support:support-compat:27.0.0 (*)
+|    |    +--- com.android.support:support-core-ui:27.0.0
+|    |    |    +--- com.android.support:support-annotations:27.0.0
+|    |    |    \--- com.android.support:support-compat:27.0.0 (*)
+|    |    +--- com.android.support:support-core-utils:27.0.0 (*)
+|    |    \--- com.android.support:support-annotations:27.0.0
+|    +--- com.android.support:support-vector-drawable:27.0.0
+|    |    +--- com.android.support:support-annotations:27.0.0
+|    |    \--- com.android.support:support-compat:27.0.0 (*)
+|    \--- com.android.support:animated-vector-drawable:27.0.0
+|         +--- com.android.support:support-vector-drawable:27.0.0 (*)
+|         \--- com.android.support:support-core-ui:27.0.0 (*)
+\--- com.facebook.react:react-native:+ -> 0.40.0
+     +--- javax.inject:javax.inject:1
+     +--- com.android.support:appcompat-v7:23.0.1 -> 27.0.0 (*)
+     +--- com.android.support:recyclerview-v7:23.0.1
+     |    +--- com.android.support:support-v4:23.0.1 -> 23.2.1
+     |    |    \--- com.android.support:support-annotations:23.2.1 -> 27.0.0
+     |    \--- com.android.support:support-annotations:23.0.1 -> 27.0.0
+     +--- com.facebook.fresco:fresco:0.11.0
+     |    +--- com.facebook.fresco:drawee:0.11.0
+     |    |    +--- com.android.support:support-v4:23.2.1 (*)
+     |    |    \--- com.facebook.fresco:fbcore:0.11.0
+     |    +--- com.facebook.fresco:fbcore:0.11.0
+     |    \--- com.facebook.fresco:imagepipeline:0.11.0
+     |         +--- com.android.support:support-v4:23.2.1 (*)
+     |         +--- com.facebook.fresco:fbcore:0.11.0
+     |         +--- com.parse.bolts:bolts-tasks:1.4.0
+     |         +--- com.nineoldandroids:library:2.4.0
+     |         \--- com.facebook.fresco:imagepipeline-base:0.11.0
+     |              +--- com.android.support:support-v4:23.2.1 (*)
+     |              +--- com.facebook.fresco:fbcore:0.11.0
+     |              +--- com.parse.bolts:bolts-tasks:1.4.0
+     |              \--- com.nineoldandroids:library:2.4.0
+     +--- com.facebook.fresco:imagepipeline-okhttp3:0.11.0
+     |    +--- com.facebook.fresco:fbcore:0.11.0
+     |    +--- com.squareup.okhttp3:okhttp:3.0.1 -> 3.4.1
+     |    |    \--- com.squareup.okio:okio:1.9.0
+     |    \--- com.facebook.fresco:imagepipeline:0.11.0 (*)
+     +--- com.facebook.soloader:soloader:0.1.0
+     +--- com.google.code.findbugs:jsr305:3.0.0
+     +--- com.squareup.okhttp3:okhttp:3.4.1 (*)
+     +--- com.squareup.okhttp3:okhttp-urlconnection:3.4.1
+     |    \--- com.squareup.okhttp3:okhttp:3.4.1 (*)
+     +--- com.squareup.okhttp3:okhttp-ws:3.4.1
+     |    \--- com.squareup.okhttp3:okhttp:3.4.1 (*)
+     +--- com.squareup.okio:okio:1.9.0
+     \--- org.webkit:android-jsc:r174650
+
+_releaseCompile - ## Internal use, do not manually configure ##
++--- com.android.support:appcompat-v7:27.0.0+ -> 27.0.0
+|    +--- com.android.support:support-annotations:27.0.0
+|    +--- com.android.support:support-core-utils:27.0.0
+|    |    +--- com.android.support:support-annotations:27.0.0
+|    |    \--- com.android.support:support-compat:27.0.0
+|    |         +--- com.android.support:support-annotations:27.0.0
+|    |         \--- android.arch.lifecycle:runtime:1.0.0
+|    |              +--- android.arch.lifecycle:common:1.0.0
+|    |              \--- android.arch.core:common:1.0.0
+|    +--- com.android.support:support-fragment:27.0.0
+|    |    +--- com.android.support:support-compat:27.0.0 (*)
+|    |    +--- com.android.support:support-core-ui:27.0.0
+|    |    |    +--- com.android.support:support-annotations:27.0.0
+|    |    |    \--- com.android.support:support-compat:27.0.0 (*)
+|    |    +--- com.android.support:support-core-utils:27.0.0 (*)
+|    |    \--- com.android.support:support-annotations:27.0.0
+|    +--- com.android.support:support-vector-drawable:27.0.0
+|    |    +--- com.android.support:support-annotations:27.0.0
+|    |    \--- com.android.support:support-compat:27.0.0 (*)
+|    \--- com.android.support:animated-vector-drawable:27.0.0
+|         +--- com.android.support:support-vector-drawable:27.0.0 (*)
+|         \--- com.android.support:support-core-ui:27.0.0 (*)
+\--- com.facebook.react:react-native:+ -> 0.40.0
+     +--- javax.inject:javax.inject:1
+     +--- com.android.support:appcompat-v7:23.0.1 -> 27.0.0 (*)
+     +--- com.android.support:recyclerview-v7:23.0.1
+     |    +--- com.android.support:support-v4:23.0.1 -> 23.2.1
+     |    |    \--- com.android.support:support-annotations:23.2.1 -> 27.0.0
+     |    \--- com.android.support:support-annotations:23.0.1 -> 27.0.0
+     +--- com.facebook.fresco:fresco:0.11.0
+     |    +--- com.facebook.fresco:drawee:0.11.0
+     |    |    +--- com.android.support:support-v4:23.2.1 (*)
+     |    |    \--- com.facebook.fresco:fbcore:0.11.0
+     |    +--- com.facebook.fresco:fbcore:0.11.0
+     |    \--- com.facebook.fresco:imagepipeline:0.11.0
+     |         +--- com.android.support:support-v4:23.2.1 (*)
+     |         +--- com.facebook.fresco:fbcore:0.11.0
+     |         +--- com.parse.bolts:bolts-tasks:1.4.0
+     |         +--- com.nineoldandroids:library:2.4.0
+     |         \--- com.facebook.fresco:imagepipeline-base:0.11.0
+     |              +--- com.android.support:support-v4:23.2.1 (*)
+     |              +--- com.facebook.fresco:fbcore:0.11.0
+     |              +--- com.parse.bolts:bolts-tasks:1.4.0
+     |              \--- com.nineoldandroids:library:2.4.0
+     +--- com.facebook.fresco:imagepipeline-okhttp3:0.11.0
+     |    +--- com.facebook.fresco:fbcore:0.11.0
+     |    +--- com.squareup.okhttp3:okhttp:3.0.1 -> 3.4.1
+     |    |    \--- com.squareup.okio:okio:1.9.0
+     |    \--- com.facebook.fresco:imagepipeline:0.11.0 (*)
+     +--- com.facebook.soloader:soloader:0.1.0
+     +--- com.google.code.findbugs:jsr305:3.0.0
+     +--- com.squareup.okhttp3:okhttp:3.4.1 (*)
+     +--- com.squareup.okhttp3:okhttp-urlconnection:3.4.1
+     |    \--- com.squareup.okhttp3:okhttp:3.4.1 (*)
+     +--- com.squareup.okhttp3:okhttp-ws:3.4.1
+     |    \--- com.squareup.okhttp3:okhttp:3.4.1 (*)
+     +--- com.squareup.okio:okio:1.9.0
+     \--- org.webkit:android-jsc:r174650
+
+_releaseUnitTestApk - ## Internal use, do not manually configure ##
+No dependencies
+
+_releaseUnitTestCompile - ## Internal use, do not manually configure ##
+No dependencies
+
+androidJacocoAgent - The Jacoco agent to use to get coverage data.
+\--- org.jacoco:org.jacoco.agent:0.7.4.201502262128
+
+androidJacocoAnt - The Jacoco ant tasks to use to get execute Gradle tasks.
+\--- org.jacoco:org.jacoco.ant:0.7.4.201502262128
+     +--- org.jacoco:org.jacoco.core:0.7.4.201502262128
+     |    \--- org.ow2.asm:asm-debug-all:5.0.1
+     +--- org.jacoco:org.jacoco.report:0.7.4.201502262128
+     |    +--- org.jacoco:org.jacoco.core:0.7.4.201502262128 (*)
+     |    \--- org.ow2.asm:asm-debug-all:5.0.1
+     \--- org.jacoco:org.jacoco.agent:0.7.4.201502262128
+
+androidTestApk - Classpath packaged with the compiled 'androidTest' classes.
+No dependencies
+
+androidTestCompile - Classpath for compiling the androidTest sources.
+No dependencies
+
+androidTestProvided - Classpath for only compiling the androidTest sources.
+No dependencies
+
+androidTestWearApp - Link to a wear app to embed for object 'androidTest'.
+No dependencies
+
+apk - Classpath packaged with the compiled 'main' classes.
+No dependencies
+
+archives - Configuration for archive artifacts.
+No dependencies
+
+compile - Classpath for compiling the main sources.
++--- com.android.support:appcompat-v7:27.0.0+ -> 27.0.0
+|    +--- com.android.support:support-annotations:27.0.0
+|    +--- com.android.support:support-core-utils:27.0.0
+|    |    +--- com.android.support:support-annotations:27.0.0
+|    |    \--- com.android.support:support-compat:27.0.0
+|    |         +--- com.android.support:support-annotations:27.0.0
+|    |         \--- android.arch.lifecycle:runtime:1.0.0
+|    |              +--- android.arch.lifecycle:common:1.0.0
+|    |              \--- android.arch.core:common:1.0.0
+|    +--- com.android.support:support-fragment:27.0.0
+|    |    +--- com.android.support:support-compat:27.0.0 (*)
+|    |    +--- com.android.support:support-core-ui:27.0.0
+|    |    |    +--- com.android.support:support-annotations:27.0.0
+|    |    |    \--- com.android.support:support-compat:27.0.0 (*)
+|    |    +--- com.android.support:support-core-utils:27.0.0 (*)
+|    |    \--- com.android.support:support-annotations:27.0.0
+|    +--- com.android.support:support-vector-drawable:27.0.0
+|    |    +--- com.android.support:support-annotations:27.0.0
+|    |    \--- com.android.support:support-compat:27.0.0 (*)
+|    \--- com.android.support:animated-vector-drawable:27.0.0
+|         +--- com.android.support:support-vector-drawable:27.0.0 (*)
+|         \--- com.android.support:support-core-ui:27.0.0 (*)
+\--- com.facebook.react:react-native:+ -> 0.40.0
+     +--- javax.inject:javax.inject:1
+     +--- com.android.support:appcompat-v7:23.0.1 -> 27.0.0 (*)
+     +--- com.android.support:recyclerview-v7:23.0.1
+     |    +--- com.android.support:support-v4:23.0.1 -> 23.2.1
+     |    |    \--- com.android.support:support-annotations:23.2.1 -> 27.0.0
+     |    \--- com.android.support:support-annotations:23.0.1 -> 27.0.0
+     +--- com.facebook.fresco:fresco:0.11.0
+     |    +--- com.facebook.fresco:drawee:0.11.0
+     |    |    +--- com.android.support:support-v4:23.2.1 (*)
+     |    |    \--- com.facebook.fresco:fbcore:0.11.0
+     |    +--- com.facebook.fresco:fbcore:0.11.0
+     |    \--- com.facebook.fresco:imagepipeline:0.11.0
+     |         +--- com.android.support:support-v4:23.2.1 (*)
+     |         +--- com.facebook.fresco:fbcore:0.11.0
+     |         +--- com.parse.bolts:bolts-tasks:1.4.0
+     |         +--- com.nineoldandroids:library:2.4.0
+     |         \--- com.facebook.fresco:imagepipeline-base:0.11.0
+     |              +--- com.android.support:support-v4:23.2.1 (*)
+     |              +--- com.facebook.fresco:fbcore:0.11.0
+     |              +--- com.parse.bolts:bolts-tasks:1.4.0
+     |              \--- com.nineoldandroids:library:2.4.0
+     +--- com.facebook.fresco:imagepipeline-okhttp3:0.11.0
+     |    +--- com.facebook.fresco:fbcore:0.11.0
+     |    +--- com.squareup.okhttp3:okhttp:3.0.1 -> 3.4.1
+     |    |    \--- com.squareup.okio:okio:1.9.0
+     |    \--- com.facebook.fresco:imagepipeline:0.11.0 (*)
+     +--- com.facebook.soloader:soloader:0.1.0
+     +--- com.google.code.findbugs:jsr305:3.0.0
+     +--- com.squareup.okhttp3:okhttp:3.4.1 (*)
+     +--- com.squareup.okhttp3:okhttp-urlconnection:3.4.1
+     |    \--- com.squareup.okhttp3:okhttp:3.4.1 (*)
+     +--- com.squareup.okhttp3:okhttp-ws:3.4.1
+     |    \--- com.squareup.okhttp3:okhttp:3.4.1 (*)
+     +--- com.squareup.okio:okio:1.9.0
+     \--- org.webkit:android-jsc:r174650
+
+debugApk - Classpath packaged with the compiled 'debug' classes.
+No dependencies
+
+debugCompile - Classpath for compiling the debug sources.
+No dependencies
+
+debugProvided - Classpath for only compiling the debug sources.
+No dependencies
+
+debugWearApp - Link to a wear app to embed for object 'debug'.
+No dependencies
+
+default - Configuration for default artifacts.
+No dependencies
+
+default-mapping - Configuration for default mapping artifacts.
+No dependencies
+
+default-metadata - Metadata for the produced APKs.
+No dependencies
+
+provided - Classpath for only compiling the main sources.
+No dependencies
+
+releaseApk - Classpath packaged with the compiled 'release' classes.
+No dependencies
+
+releaseCompile - Classpath for compiling the release sources.
+No dependencies
+
+releaseProvided - Classpath for only compiling the release sources.
+No dependencies
+
+releaseWearApp - Link to a wear app to embed for object 'release'.
+No dependencies
+
+testApk - Classpath packaged with the compiled 'test' classes.
+No dependencies
+
+testCompile - Classpath for compiling the test sources.
+No dependencies
+
+testDebugApk - Classpath packaged with the compiled 'testDebug' classes.
+No dependencies
+
+testDebugCompile - Classpath for compiling the testDebug sources.
+No dependencies
+
+testDebugProvided - Classpath for only compiling the testDebug sources.
+No dependencies
+
+testDebugWearApp - Link to a wear app to embed for object 'testDebug'.
+No dependencies
+
+testProvided - Classpath for only compiling the test sources.
+No dependencies
+
+testReleaseApk - Classpath packaged with the compiled 'testRelease' classes.
+No dependencies
+
+testReleaseCompile - Classpath for compiling the testRelease sources.
+No dependencies
+
+testReleaseProvided - Classpath for only compiling the testRelease sources.
+No dependencies
+
+testReleaseWearApp - Link to a wear app to embed for object 'testRelease'.
+No dependencies
+
+testWearApp - Link to a wear app to embed for object 'test'.
+No dependencies
+
+wearApp - Link to a wear app to embed for object 'main'.
+No dependencies

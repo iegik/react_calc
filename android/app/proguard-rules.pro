@@ -48,19 +48,50 @@
 -keepclassmembers class *  { @com.facebook.react.uimanager.annotations.ReactProp <methods>; }
 -keepclassmembers class *  { @com.facebook.react.uimanager.annotations.ReactPropGroup <methods>; }
 
--dontwarn com.facebook.react.**
+# JSR 305 annotations are for embedding nullability information.
+-dontwarn javax.annotation.**
 
-# okhttp
+-dontwarn com.facebook.**
 
 -keepattributes Signature
 -keepattributes *Annotation*
+
+# okhttp
+# A resource is loaded with a relative path so the package of this class must be preserved.
+
 -keep class okhttp3.** { *; }
 -keep interface okhttp3.** { *; }
 -dontwarn okhttp3.**
 
 # okio
 
--keep class sun.misc.Unsafe { *; }
--dontwarn java.nio.file.*
--dontwarn org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement
+-keep class okio.** { *; }
+-keep interface okio.** { *; }
 -dontwarn okio.**
+
+# sun.misc.Unsafe
+
+-keep class sun.misc.Unsafe { *; }
+-keep interface sun.misc.Unsafe { *; }
+
+# nio
+
+-dontwarn java.nio.file.Files
+-dontwarn java.nio.file.Path
+-dontwarn java.nio.file.OpenOption
+
+# Animal Sniffer compileOnly dependency to ensure APIs are compatible with older versions of Java.
+-dontwarn org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement
+
+# fasterxml
+
+-keep class com.fasterxml.** { *; }
+-dontwarn com.fasterxml.**
+
+# apache.http
+
+-dontwarn org.apache.http.**
+
+# android.net.http
+
+-dontwarn android.net.http.AndroidHttpClient

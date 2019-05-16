@@ -83,15 +83,15 @@ def enableSeparateBuildPerCPUArchitecture = false
 def enableProguardInReleaseBuilds = true
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.3"
+    compileSdkVersion 28
+    buildToolsVersion "28.0.3"
 
     defaultConfig {
         applicationId "com.react_calc"
         minSdkVersion 16
-        targetSdkVersion 22
-        versionCode 4
-        versionName "1.0.3"
+        targetSdkVersion 26
+        versionCode 5
+        versionName "1.0.4"
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
@@ -134,12 +134,14 @@ android {
     }
     lintOptions {
         disable 'InvalidPackage'
+        warning 'InvalidPackage', 'MissingPermission'
+        abortOnError false
     }
 }
 
 // Same as android.compileSdkVersion
 ext {
-    supportLibVersion = '23.0.1'
+    supportLibVersion = '26.0.0'
 }
 
 dependencies {

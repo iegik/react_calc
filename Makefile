@@ -22,16 +22,21 @@ android_release:
 android_release_test:
 	@react-native run-android --variant=release
 
-ios: ## Build Android application
+ios: ## Build iOS application
 	@npm run ios
 
 npm_test:
 	@npm test # --inspect --debug-brk
 
+npm_lint:
+	@npm run android:lint
+
 gradle_test:
 	@cd android && ./gradlew lint && cd ..
 
 test: npm_test gradle_test ## Run all tests (unit/lint)
+
+lint: npm_lint
 
 compile:
 	@npm run start
